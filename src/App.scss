@@ -1,0 +1,7 @@
+@import '~src/styles/partials/mixins';
+@import '~src/styles/partials/variables';
+
+#app {
+  @include position(absolute, 0, 0, 0, 0);
+  @include scrollable();
+}

@@ -1,0 +1,21 @@
+@import '~src/styles/partials/mixins';
+@import '~src/styles/partials/variables';
+
+.page-welcome.root {
+  @include center();
+
+  form {
+    width: 300px;
+
+    .md-card {
+      box-shadow: none;
+      background-color: transparent;
+    }
+
+    ul {
+      li {
+        margin-top: 0px;
+      }
+    }
+  }
+}
