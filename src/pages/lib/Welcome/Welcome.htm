@@ -1,21 +1,27 @@
 <div class="page-welcome root">
   <div class="outer">
     <div class="inner">
-      <form>
+      <form novalidate @submit.prevent="$v.$touch(); !$v.$invalid && submit()">
         <md-card>
           <md-card-header>
             <div class="md-title">Welcome!</div>
             <div class="md-subhead">Log in to your Wallet</div>
           </md-card-header>
           <md-card-content>
-            <md-input-container>
+            <md-input-container :class="{
+              'md-input-invalid': $v.mnemonic.$error
+            }">
               <label>Mnemonic</label>
-              <md-textarea v-model="mnemonic" ref="mnemonic" :style="{
+              <md-textarea
+                @input="$v.mnemonic.$touch()"
+                v-model="mnemonic" ref="mnemonic" :style="{
                 'min-height': mnemonic ? '72px' : 'auto'
               }"></md-textarea>
+              <span class="md-error" v-if="!$v.mnemonic.required">Mnemonic is a required field</span>
+              <span class="md-error" v-else-if="!$v.mnemonic.valid">Invalid mnemonic</span>
             </md-input-container>
             <div v-if="mnemonic">
-              <p class="md-body-2">You need copy this <b>Mnemonic key</b> to access this wallet in the future.</p>
+              <p class="md-body-2">You need copy this <a href="https://en.bitcoin.it/wiki/Mnemonic_phrase">Mnemonic key</a> to access this wallet in the future.</p>
               <p class="md-body-1">
                 <ul>
                   <li>Keep it safe!</li>
@@ -28,7 +34,7 @@
           </md-card-content>
           <md-card-actions>
             <md-button @click="generateMnemonic">Generate</md-button>
-            <md-button class="md-primary">Sign In</md-button>
+            <md-button type="submit" class="md-primary">Sign In</md-button>
           </md-card-actions>
         </md-card>
       </form>

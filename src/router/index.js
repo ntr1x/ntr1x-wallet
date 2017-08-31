@@ -1,11 +1,11 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 
 import { Welcome, Transfer } from 'src/pages'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+export default new VueRouter({
   mode: 'history',
   routes: [
     {
@@ -16,7 +16,8 @@ export default new Router({
     {
       path: '/transfer',
       name: 'Transfer',
-      component: Transfer
+      component: Transfer,
+      meta: { requiresAuth: true }
     }
   ]
 })
