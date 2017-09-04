@@ -1,0 +1,25 @@
+@mixin stepper-horizontal($item: 'item') {
+
+  display: flex;
+  flex-direction: column;
+
+  >.stepper-item {
+    flex: 0 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    >.item-icon {
+      background: blue;
+      color: white;
+      border-radius: 50%;
+    }
+    >.item-info {
+      font-weight: 500;
+      >.info-title {
+        font-size: 12px;
+      }
+      >.info-subtitle {
+        font-size: 10px;
+      }
+    }
+  }
+}

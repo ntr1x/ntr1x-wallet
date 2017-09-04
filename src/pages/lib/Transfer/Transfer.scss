@@ -4,8 +4,6 @@
 .page-transfer.root {
 
   .md-stepper {
-    @include position(absolute, 0, 0, 0, 0);
-
     .md-step-header {
       .md-step-titles {
         display: none;

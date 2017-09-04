@@ -1,0 +1,9 @@
+<div class="root control-stepper">
+  <div class="stepper-item" :class="{ 'stepper-item-active': index === active }" v-for="(step, index) in steps" :key="step.symbol">
+    <div class="item-icon">{{ step.symbol }}</div>
+    <div class="item-info">
+      <div class="info-title">{{ step.title }}</div>
+      <div class="info-subtitle">{{ step.subtitle }}</div>
+    </div>
+  </div>
+</div>

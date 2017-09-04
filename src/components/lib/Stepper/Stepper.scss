@@ -1,0 +1,40 @@
+.root.control-stepper {
+  display: flex;
+  justify-content: space-between;
+  .stepper-item {
+    display: flex;
+    flex: 0 0 auto;
+    padding: 12px;
+    align-items: center;
+    .item-icon {
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      background: #bdbdbd;
+      color: #000000;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      font-size: 12px;
+      margin: 12px;
+    }
+    .item-info {
+      font-weight: 500;
+      .info-title {
+        font-size: 12px;
+        line-height: 1.6em;
+      }
+      .info-subtitle {
+        font-size: 10px;
+        line-height: 1.5em;
+      }
+    }
+
+    &.stepper-item-active {
+      .item-icon {
+        background: #3f51b5;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
