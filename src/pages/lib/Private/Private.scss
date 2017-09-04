@@ -1,0 +1,11 @@
+@import '~src/styles/partials/mixins';
+@import '~src/styles/partials/variables';
+
+.root.page-private {
+  @include splash();
+  @include dock-column();
+
+  .middle {
+    @include scrollable();
+  }
+}

@@ -7,3 +7,7 @@ html, body {
   margin: 0;
   overflow: hidden;
 }
+
+.md-stepper .md-steps-container .md-steps-wrapper .md-step .md-step-content {
+  flex: 1 1 auto;
+}

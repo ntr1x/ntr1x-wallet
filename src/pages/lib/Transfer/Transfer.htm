@@ -1,90 +1,81 @@
 <div class="page-transfer root">
-  <md-toolbar>
-    <md-button class="md-icon-button">
-      <md-icon>menu</md-icon>
-    </md-button>
-
-    <h2 class="md-title" style="flex: 1">Default</h2>
-    <md-menu>
-      <md-button md-menu-trigger>Bottom Right</md-button>
-      <md-menu-content>
-        <md-menu-item>My Item 1</md-menu-item>
-        <md-menu-item>My Item 2</md-menu-item>
-        <md-menu-item>My Item 3</md-menu-item>
-      </md-menu-content>
-    </md-menu>
-    <md-button class="md-icon-button">
-      <md-icon>person</md-icon>
-    </md-button>
-  </md-toolbar>
-  <md-card>
-    <md-card-header>
-      <div class="md-title">Senders</div>
-      <div class="md-subhead">Your source addresses</div>
-    </md-card-header>
-    <md-list class="custom-list md-triple-line">
-      <md-list-item>
-        <md-avatar class="md-avatar-icon">
-          <md-icon>person</md-icon>
-        </md-avatar>
-        <md-input-container>
-          <label>Source address</label>
-          <md-input></md-input>
-        </md-input-container>
-        <md-button class="md-icon-button md-list-action md-primary">
-          <md-icon>add</md-icon>
-        </md-button>
-      </md-list-item>
-      <md-list-item @click.prevent v-for="item in [0]" :key="item">
-        <md-avatar>
-          <img :src="`https://placeimg.com/40/40/people/grayscale/${item}`" alt="People">
-        </md-avatar>
-        <div class="md-list-text-container">
-          <span>Igor Pavlenko</span>
-          <p>{{$store.state.account.hdNode().getAddress()}}</p>
-        </div>
-        <div>
-          <span>7.234 BTC</span>
-        </div>
-        <md-button class="md-icon-button md-list-action">
-          <md-icon>clear</md-icon>
-        </md-button>
-      </md-list-item>
-    </md-list>
-  </md-card>
-  <md-card>
-    <md-card-header>
-      <div class="md-title">Recipients</div>
-      <div class="md-subhead">Bitcoin addresses of your recipients</div>
-    </md-card-header>
-    <md-list class="custom-list md-triple-line">
-      <md-list-item>
-        <md-avatar class="md-avatar-icon">
-          <md-icon>person</md-icon>
-        </md-avatar>
-        <md-input-container>
-          <label>Recipient address</label>
-          <md-input></md-input>
-        </md-input-container>
-        <md-button class="md-icon-button md-list-action md-primary">
-          <md-icon>add</md-icon>
-        </md-button>
-      </md-list-item>
-      <md-list-item @click.prevent v-for="item in [0,1,2,3,4]" :key="item">
-        <md-avatar>
-          <img :src="`https://placeimg.com/40/40/people/grayscale/${item}`" alt="People">
-        </md-avatar>
-        <div class="md-list-text-container">
-          <span>Igor Pavlenko</span>
-          <p>{{$store.state.account.hdNode().getAddress()}}</p>
-        </div>
-        <div>
-          <span>0.234 BTC</span>
-        </div>
-        <md-button class="md-icon-button md-list-action">
-          <md-icon>clear</md-icon>
-        </md-button>
-      </md-list-item>
-    </md-list>
-  </md-card>
+  <md-stepper :md-alternate-labels="false">
+    <md-step md-label="Sources" md-message="Addresses">
+      <md-card>
+        <md-card-header>
+          <div class="md-title">Senders</div>
+          <div class="md-subhead">Your source addresses</div>
+        </md-card-header>
+        <md-list class="custom-list md-triple-line">
+          <md-list-item>
+            <md-avatar class="md-avatar-icon">
+              <md-icon>person</md-icon>
+            </md-avatar>
+            <md-input-container>
+              <label>Source address</label>
+              <md-input></md-input>
+            </md-input-container>
+            <md-button class="md-icon-button md-list-action md-primary">
+              <md-icon>add</md-icon>
+            </md-button>
+          </md-list-item>
+          <md-list-item @click.prevent v-for="item in [0]" :key="item">
+            <md-avatar>
+              <img :src="`https://placeimg.com/40/40/people/grayscale/${item}`" alt="People">
+            </md-avatar>
+            <div class="md-list-text-container">
+              <span>Igor Pavlenko</span>
+              <p>{{$store.state.account.hdNode().getAddress()}}</p>
+            </div>
+            <div>
+              <span>7.234 BTC</span>
+            </div>
+            <md-button class="md-icon-button md-list-action">
+              <md-icon>clear</md-icon>
+            </md-button>
+          </md-list-item>
+        </md-list>
+      </md-card>
+    </md-step>
+    <md-step md-label="Destinations" md-message="Addresses">
+      <md-card>
+        <md-card-header>
+          <div class="md-title">Recipients</div>
+          <div class="md-subhead">Bitcoin addresses of your recipients</div>
+        </md-card-header>
+        <md-list class="custom-list md-triple-line">
+          <md-list-item>
+            <md-avatar class="md-avatar-icon">
+              <md-icon>person</md-icon>
+            </md-avatar>
+            <md-input-container>
+              <label>Recipient address</label>
+              <md-input></md-input>
+            </md-input-container>
+            <md-button class="md-icon-button md-list-action md-primary">
+              <md-icon>add</md-icon>
+            </md-button>
+          </md-list-item>
+          <md-list-item @click.prevent v-for="item in [0,1,2,3,4]" :key="item">
+            <md-avatar>
+              <img :src="`https://placeimg.com/40/40/people/grayscale/${item}`" alt="People">
+            </md-avatar>
+            <div class="md-list-text-container">
+              <span>Igor Pavlenko</span>
+              <p>{{$store.state.account.hdNode().getAddress()}}</p>
+            </div>
+            <div>
+              <span>0.234 BTC</span>
+            </div>
+            <md-button class="md-icon-button md-list-action">
+              <md-icon>clear</md-icon>
+            </md-button>
+          </md-list-item>
+        </md-list>
+      </md-card>
+    </md-step>
+    <md-step md-label="Signatures" md-message="Confirmation">
+      <p>This seems something I need to focus on just after the first step.</p>
+    </md-step>
+  </md-stepper>
 </div>

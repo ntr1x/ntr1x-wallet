@@ -1,6 +1,7 @@
 @import "~@/styles/partials/variables";
+@import '~material-colors-scss/function';
 
-@mixin scrollable($thumb-background: #{material-color('grey', '700')}, $track-background: rgba(0,0,0,0.2), $corner-background: transparent) {
+@mixin scrollable($thumb-background: #{material-color('blue', '500')}, $track-background: rgba(0,0,0,0.05), $corner-background: transparent) {
 
   overflow: auto;
 

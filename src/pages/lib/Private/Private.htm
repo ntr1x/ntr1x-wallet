@@ -1,0 +1,32 @@
+<div class="page-private root">
+  <div class="top">
+    <md-toolbar>
+      <md-button class="md-icon-button">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <h2 class="md-title" style="flex: 1">Transfer</h2>
+      <md-button class="md-raised md-accent">Send</md-button>
+      <md-menu>
+        <md-button md-menu-trigger class="md-icon-button">
+          <md-icon>person</md-icon>
+        </md-button>
+        <md-menu-content>
+          <md-menu-item>My Item 1</md-menu-item>
+          <md-menu-item>My Item 2</md-menu-item>
+          <md-menu-item>My Item 3</md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </md-toolbar>
+  </div>
+  <div class="middle">
+    <router-view />
+  </div>
+  <div class="bottom">
+    <md-bottom-bar md-shift>
+      <md-bottom-bar-item md-icon="account_balance_wallet" :md-active="path === '/private/transfer'">Transfer</md-bottom-bar-item>
+      <md-bottom-bar-item md-icon="history" :md-active="path === '/private/history'">History</md-bottom-bar-item>
+      <!-- <md-bottom-bar-item md-icon="access_time">Pending</md-bottom-bar-item> -->
+      <md-bottom-bar-item md-icon="contacts" :md-active="path === '/private/addresses'">Addresses</md-bottom-bar-item>
+    </md-bottom-bar>
+  </div>
+</div>

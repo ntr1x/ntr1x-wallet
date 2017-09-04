@@ -22,7 +22,7 @@ export default {
       const seed = bip39.mnemonicToSeed(this.mnemonic)
       const hdNode = HDNode.fromSeedBuffer(seed, networks.testnet)
       await this.signin(hdNode)
-      this.$router.push('/transfer')
+      this.$router.push('/private')
     },
     ...mapActions({
       signin: 'account/signin'
