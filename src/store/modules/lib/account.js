@@ -1,7 +1,8 @@
 export default {
   namespaced: true,
   state: {
-    hdNode: null
+    hdNode: null,
+    template: null
   },
   mutations: {
     hdNode (state, hdNode) {
